@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Enhance Analyzer</title>
+    <link rel= "stylesheet" type= "text/css" href="static\styles\style.css">
+</head>
+<script>
+    function changeBenign(id_enhance)
+    {
+    var img = document.getElementById("benign");
+    if (id_enhance == 1) {
+        img.src="static/images/benign(0).png";
+    }
+    else if (id_enhance == 2) {
+        img.src="static/processeds/0 benign(0)he.png";
+    }
+    else if (id_enhance == 3) {
+        img.src="static/processeds/0 benign(0)ying.png";
+    }
+    else if (id_enhance == 4) {
+        img.src="static/processeds/0 benign(0)gammacorrection.png";
+    }
+    else if (id_enhance == 5) {
+        img.src="static/processeds/0 benign(0)lime.png";
+    }
+    
+    return false;
+    }
+
+    function changeMalignant(id_enhance)
+    {
+    var img = document.getElementById("malignant");
+    if (id_enhance == 1) {
+        img.src="static/images/malignant(28).png";
+    }
+    else if (id_enhance == 2) {
+        img.src="static/processeds/1 malignant(28)he.png";
+    }
+    else if (id_enhance == 3) {
+        img.src="static/processeds/1 malignant(28)ying.png";
+    }
+    else if (id_enhance == 4) {
+        img.src="static/processeds/1 malignant(28)gammacorrection.png";
+    }
+    else if (id_enhance == 5) {
+        img.src="static/processeds/1 malignant(28)lime.png";
+    }
+    
+    return false;
+    }
+
+    function changeNormal(id_enhance)
+    {
+    var img = document.getElementById("normal");
+    if (id_enhance == 1) {
+        img.src="static/images/normal(2).png";
+    }
+    else if (id_enhance == 2) {
+        img.src="static/processeds/2 normal(2)he.png";
+    }
+    else if (id_enhance == 3) {
+        img.src="static/processeds/2 normal(2)ying.png";
+    }
+    else if (id_enhance == 4) {
+        img.src="static/processeds/2 normal(2)gammacorrection.png";
+    }
+    else if (id_enhance == 5) {
+        img.src="static/processeds/2 normal(2)lime.png";
+    }
+    
+    return false;
+    }
+
+</script>
+<body>
+    
+    
+
+    <!--
+    <h1 style="text-align: center;">Upload image to enhance</h1>
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('static', filename='uploads/'+filename) }}">
+        </div>
+    {% endif %}
+    <div style="text-align: center;">
+        <form method=post enctype=multipart/form-data>
+            <span class="btn btn-success fileinput-button">
+                <span>Select file</span>
+                <input type="file" name="file" required>
+            </span><br>
+            <span>
+                <input class="btn-submit" type="submit" value="Submit">
+            </span>
+        </form>
+    </div>
+    -->
+
+    <div style="text-align: center;">
+        <h3>Benign</h3>
+        <br>
+            <img id="benign" src="static\images\benign(0).png"  width="350" height="450"/>
+        <br>
+        <div class="multi-button">
+            <button id="benign1" onclick="changeBenign(1);"> Original </button>
+            <button id="benign2" onclick="changeBenign(2);">HE</button>
+            <button id="benign3" onclick="changeBenign(3);">Ying</button>
+            <button id="benign4" onclick="changeBenign(4);">GammaCorrection</button>
+            <button id="benign5" onclick="changeBenign(5);">LIME</button>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <h3>Malignant</h3>
+        <br>
+            <img id="malignant" src="static\images\malignant(28).png"  width="350" height="450"/>
+        <br> 
+        <div class="multi-button">
+            <button id="malignant1" onclick="changeMalignant(1);"> Original </button>
+            <button id="malignant2" onclick="changeMalignant(2);">HE</button>
+            <button id="malignant3" onclick="changeMalignant(3);">Ying</button>
+            <button id="malignant4" onclick="changeMalignant(4);">GammaCorrection</button>
+            <button id="malignant5" onclick="changeMalignant(5);">LIME</button>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <h3>Normal</h3>
+        <br>
+            <img id="normal" src="static\images\normal(2).png"  width="350" height="450"/>
+        <br>
+        <div class="multi-button">
+            <button id="normal1" onclick="changeNormal(1);"> Original </button>
+            <button id="normal2" onclick="changeNormal(2);">HE</button>
+            <button id="normal3" onclick="changeNormal(3);">Ying</button>
+            <button id="normal4" onclick="changeNormal(4);">GammaCorrection</button>
+            <button id="normal5" onclick="changeNormal(5);">LIME</button>
+        </div>
+    </div>
+    <br><br><br>
+    <div id="lastdiv">
+
+        
+    </div>
+</body>
+</html>
